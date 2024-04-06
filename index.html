@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Lash Studios</title>
+    <!-- Preload Typed.js Script -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" as="script">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Preload Your Custom Font Here - Example Below -->
+    <!-- <link rel="preload" href="your-font-path.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Barbie Lash Studios</h1>
+      
+        <nav id="navbar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100" alt="Barbie Lash Studios Logo">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+        <!-- Wrap the hero content in a section tag for better semantic structure -->
+        <section class="hero-content">
+            <h2>Transform Your Gaze</h2>
+            <h3 id="typed-strings"></h3>
+            <!-- Wrap CTA in a div with role="banner" for better SEO and accessibility -->
+            <div role="banner">
+                <a href="#" class="cta-button">Start Your Transformation</a>
+            </div>
+        </section>
+    </header>
+  <section class="problem-solution">
+    <div class="container">
+        <div class="problem">
+            <h2>Do Your Lashes Feel Less Than Perfect?</h2>
+            <p>Have you ever left a lash appointment feeling like just another number, rushed out the door without your lash dreams fully realized? The excitement of enhancing your beauty turns to disappointment when the set you envisioned doesn't match the reflection in the mirror.</p>
+            <p>Imagine the frustration of investing time and money, only to end up with extensions that feel unnatural or are visibly mismatched to your natural lash line. This scenario is all too common, leaving clients feeling unheard and undervalued, pondering the decision to remove them entirely.</p>
+            <img src="https://via.placeholder.com/500x300" alt="Disappointed Customer">
+        </div>
+        <div class="solution">
+            <h2>The Barbie Lash Studios Promise</h2>
+            <p>At Barbie Lash Studios, we promise a different experience. Our commitment is to quality, communication, and personalized service that stands unmatched in the Bay Area. Using safe, advanced techniques and organic, irritation-free products, we ensure your lash extensions not only meet but exceed your expectations—every single time.</p>
+            <video controls>
+                <source src="https://www.example.com/placeholder-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <a href="#" class="cta-button">Discover Your Perfect Lashes</a>
+        </div>
+    </div>
+</section>
+  <section class="benefits-section">
+    <div class="benefit-card" onclick="this.classList.toggle('flipped');">
+        <div class="benefit-card-inner">
+            <div class="benefit-card-front">
+                <h3>Health-Conscious Approach</h3>
+            </div>
+            <div class="benefit-card-back">
+                <p>Unlike many studios, we prioritize the health of your natural lashes, conducting regular checks to ensure they remain healthy and strong under our extensions.</p>
+            </div>
+        </div>
+    </div>
+    <div class="benefit-card" onclick="this.classList.toggle('flipped');">
+        <div class="benefit-card-inner">
+            <div class="benefit-card-front">
+                <h3>Organic, Burn-Free Products</h3>
+            </div>
+            <div class="benefit-card-back">
+                <p>Our exclusive use of organic, burn-free adhesives and products guarantees a safe, comfortable experience, setting us apart from competitors who use harsh chemicals.</p>
+            </div>
+        </div>
+    </div>
+    <div class="benefit-card" onclick="this.classList.toggle('flipped');">
+        <div class="benefit-card-inner">
+            <div class="benefit-card-front">
+                <h3>Sterilization Standards</h3>
+            </div>
+            <div class="benefit-card-back">
+                <p>We take hygiene and safety seriously, with a rigorous protocol for sterilizing tools overnight before each use—a testament to our unparalleled dedication to your wellbeing and satisfaction.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="script.js"></script>
+</body>
+</html>
