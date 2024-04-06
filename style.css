@@ -105,7 +105,8 @@
      display:flex;
      justify-content:space-around;
      flex-wrap:wrap;
-     padding:20px 
+     padding:20px;
+     margin-bottom: 70px;
 }
  .benefit-card {
      perspective:1000px;
