@@ -175,13 +175,49 @@
  .testimonial-item {
      display:none 
 }
- .testimonial-text,.testimonial-detail {
-     font-family:'Montserrat',sans-serif;
-     font-size:1em;
-     font-family:Montserrat,sans-serif;
-     font-size:1em;
-     margin:10px auto;
-     width:80% 
+ .testimonial-text, .testimonial-detail {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 1em;
+     margin: 10px auto;
+     width: 80%;
+}
+ .testimonial-text {
+     font-size: 1.2em;
+    /* Slightly larger to stand out */
+     font-weight: bold;
+    /* Make it bolder */
+     position: relative;
+     padding: 20px;
+    /* Add some padding */
+     background-color: var(--secondary-color);
+    /* Subtle background */
+     color: var(--primary-color);
+    /* Color for the text */
+     border-radius: 10px;
+    /* Soft rounded corners */
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Soft shadow for depth */
+     margin: 20px auto;
+    /* Adjusted margin for emphasis */
+     display: inline-block;
+    /* To wrap content */
+     background-color: var(--text-color);
+}
+/* Adding quotation marks */
+ .testimonial-text::before, .testimonial-text::after {
+     content: open-quote;
+    /* For the opening quote */
+     font-size: 2em;
+    /* Larger quotation marks */
+     vertical-align: -0.4em;
+    /* Adjust alignment */
+     color: var(--accent-color);
+    /* Gold color for quotes */
+     padding: .2em;
+}
+ .testimonial-text::after {
+     content: close-quote;
+    /* For the closing quote */
 }
  .testimonial-author {
      font-family:'Amatic SC',cursive;
@@ -328,3 +364,4 @@
          display:block 
     }
 }
+ 
