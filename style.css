@@ -214,7 +214,7 @@
     /* Adjust alignment */
      color: var(--accent-color);
     /* Gold color for quotes */
-     padding: .2em;
+     padding: 0 .2em;
 }
  .testimonial-text::after {
      content: close-quote;
@@ -303,7 +303,7 @@
  .faq-question {
      width:100%;
      background-color:var(--primary-color);
-     color:var(--background-color);
+     color:var(--text-color);
      padding:15px;
      font-family:'Montserrat',sans-serif;
      text-align:left;
