@@ -1,3 +1,5 @@
+
+
 :root {
      --primary-color:#FFC0CB;
      --secondary-color:#ADD8E6;
@@ -161,7 +163,8 @@
      text-align:center;
      padding:40px 20px;
      background-color:var(--accent-color);
-     color:var(--text-color) 
+     color:var(--text-color);
+     position: relative;
 }
  .section-title {
      font-family:'Amatic SC',cursive;
@@ -236,7 +239,7 @@
 }
  .testimonial-prev,.testimonial-next {
      cursor:pointer;
-     top:50%;
+     position: absolute;
      width:auto;
      margin-top:-22px;
      padding:16px;
@@ -246,6 +249,11 @@
      transition:.6s ease;
      border-radius:0 3px 3px 0;
      user-select:none 
+     
+}
+ .testimonial-prev {
+     left:0;
+     border-radius:3px 0 0 3px 
 }
  .testimonial-next {
      right:0;
