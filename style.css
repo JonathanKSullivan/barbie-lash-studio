@@ -116,8 +116,6 @@
      width:300px;
      height:200px;
      margin:20px;
-     border: var(--text-color) 3px;
-     border-style: solid;
 }
  .benefit-card-inner {
      position:relative;
@@ -141,13 +139,13 @@
      justify-content:center;
      padding:10px;
      border-radius:10px;
-     color:var(--text-color) 
+     color:var(--text-color);
+    border: #000 2px;
+    border-style: solid;
 }
  .benefit-card-front {
     background-color: var(--primary-color);
     font-size: 2em;
-    border: #000 3px;
-    border-style: solid;
 }
  .benefit-card-back {
      background-color:var(--secondary-color);
