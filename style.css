@@ -11,7 +11,7 @@
      font-family:'Montserrat',sans-serif;
      height:100%;
      overflow-x:hidden;
-     background-image: url('/background-pattern.png');
+     background-image: url('background-pattern.png');
      background-repeat: repeat;
      background-attachment: fixed;
 }
