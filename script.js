@@ -6,26 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loop: true,
     });
 
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    // Toggle navigation
-    navToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.contains('active');
-        navLinks.classList.toggle('active');
-        navToggle.setAttribute('aria-expanded', !isOpen);
-    });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 
     let currentIndex = 0;
     const items = document.querySelectorAll('.testimonial-item');
