@@ -258,9 +258,11 @@
      margin:0 auto 
 }
  .testimonial-rating {
-     color:var(--accent-color);
-     font-size:24px;
-     margin:10px 0 
+    color: var(--text-color);
+    font-size: 24px;
+    margin: 10px 0;
+    text-shadow: 0 0 3px #fff;
+    border-radius: 5px;
 }
  .features-services-section .tabs {
      overflow:hidden;
