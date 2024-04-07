@@ -1,86 +1,383 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var typed = new Typed('#typed-strings', {
-        strings: ["Unveil Natural Beauty^1000", "Enhance Your Confidence^1000", "Feel the Transformation^1000"],
-        typeSpeed: 50,
-        backSpeed: 50,
-        loop: true,
-    });
-
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    // Toggle navigation
-    navToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.contains('active');
-        navLinks.classList.toggle('active');
-        navToggle.setAttribute('aria-expanded', !isOpen);
-    });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.testimonial-item');
-    const prevButton = document.querySelector('.testimonial-prev');
-    const nextButton = document.querySelector('.testimonial-next');
-
-    function showTestimonial(index) {
-        items.forEach((item, i) => {
-            item.style.display = i === index ? 'block' : 'none';
-        });
-        items[index].classList.add('active');
-    }
-
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
-        showTestimonial(currentIndex);
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        showTestimonial(currentIndex);
-    });
-
-    showTestimonial(currentIndex); // Initialize the first item
-
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-
-            // Optional: Toggle the "active" class for styling purposes
-            question.classList.toggle('active');
-        });
-    });
-
-
-});
-
-
-
-function openService(evt, serviceName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tab-link");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(serviceName).style.display = "block";
-    evt.currentTarget.className += " active";
+:root {
+     --primary-color:#FFC0CB;
+     --secondary-color:#ADD8E6;
+     --accent-color:#FFD700;
+     --background-color:#FFF;
+     --text-color:#333 
 }
-
-// Call openService on the first tab to display it by default
-document.addEventListener('DOMContentLoaded', () => openService(event, 'LashExtensions'));
+ body,html {
+     margin:0;
+     padding:0;
+     font-family:'Montserrat',sans-serif;
+     height:100%;
+     overflow-x:hidden;
+     background-image: url('background-pattern.png');
+     background-repeat: repeat;
+     background-attachment: fixed;
+}
+ header {
+     background-image:linear-gradient(to right,var(--primary-color),var(--secondary-color));
+     background-size:cover;
+     background-position:center;
+     color:--text-color;
+     height:100vh;
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     text-align:center;
+     padding:60px 20px 
+}
+ header h1 {
+     font-family:'Pacifico',cursive;
+     font-size:4.5em;
+     color: #fff;
+}
+ header h2,header h3 {
+     font-family:'Montserrat',sans-serif;
+     font-weight:700 
+}
+ header h2 {
+     margin:.5em 0 
+}
+ header h3 {
+     margin:20px 0 
+}
+ .navbar {
+     position:absolute;
+     top:0;
+     width:100%;
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+     padding:20px 
+}
+ .cta-button {
+     display:inline-block;
+     padding:10px 20px;
+     background-color:var(--accent-color);
+     color:#000;
+     text-decoration:none;
+     border-radius:5px;
+     transition:background-color .3s;
+     font-size:1em;
+     font-family:'Montserrat',sans-serif 
+}
+ .cta-button:hover,.cta-button:focus {
+     background-color:var(--text-color);
+     color:var(--accent-color);
+     outline:None 
+}
+ .container {
+     max-width:1200px;
+     margin:auto;
+     display:grid;
+     grid-template-columns:repeat(2,1fr);
+     gap:20px 
+}
+ .problem-solution {
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     text-align:center;
+     padding:50px 20px;
+     background-color:#fff 
+}
+ .problem,.solution {
+     padding:20px 
+}
+ .problem img,.solution video {
+     max-width:100%;
+     height:auto;
+     margin-top:20px 
+}
+ @media (max-width: 768px) {
+     .container {
+         grid-template-columns:1fr 
+    }
+}
+ .solution video {
+     width:80%;
+     height:auto;
+     margin:20px auto 
+}
+ .problem-solution h2, {
+     font-family:'Montserrat',sans-serif;
+     font-weight:700 
+}
+ .benefits-section {
+     display:flex;
+     justify-content:space-around;
+     flex-wrap:wrap;
+     padding:20px;
+     margin-bottom: 70px;
+}
+ .benefit-card {
+     perspective:1000px;
+     width:300px;
+     height:200px;
+     margin:20px;
+}
+ .benefit-card-inner {
+     position:relative;
+     width:100%;
+     height:100%;
+     transition:transform .8s;
+     transform-style:preserve-3d;
+     cursor:pointer 
+}
+ .benefit-card.flipped .benefit-card-inner {
+     transform:rotateY(180deg) 
+}
+ .benefit-card-front,.benefit-card-back {
+     position:absolute;
+     width:100%;
+     height:100%;
+     -webkit-backface-visibility:hidden;
+     backface-visibility:hidden;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     padding:10px;
+     border-radius:10px;
+     color:var(--text-color);
+    border: #000 2px;
+    border-style: solid;
+}
+ .benefit-card-front {
+    background-color: var(--primary-color);
+    font-size: 2em;
+}
+ .benefit-card-back {
+     background-color:var(--secondary-color);
+     transform:rotateY(180deg);
+     text-align:center;
+     font-size:1.1em 
+}
+ .benefit-card h3 {
+     font-family:'Amatic SC',cursive;
+     font-weight:700 
+}
+ .testimonial-section {
+     text-align:center;
+     padding:40px 20px;
+     background-color:var(--accent-color);
+     color:var(--text-color);
+     position: relative;
+}
+ .section-title {
+     font-family:'Amatic SC',cursive;
+     font-size:2.5em;
+     text-align:center;
+     font-family:'Amatic SC',cursive;
+     font-size:2.5rem;
+     color:var(--text-color);
+}
+ .testimonial-slider {
+     position:relative;
+     margin:auto;
+     padding:20px;
+     box-shadow:0 0 10px #0000001a;
+     border-radius:10px 
+}
+ .testimonial-item {
+     display:none 
+}
+ .testimonial-text, .testimonial-detail {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 1em;
+     margin: 10px auto;
+     width: 80%;
+}
+ .testimonial-text {
+     font-size: 1.2em;
+    /* Slightly larger to stand out */
+     font-weight: bold;
+    /* Make it bolder */
+     position: relative;
+     padding: 20px;
+    /* Add some padding */
+     background-color: var(--secondary-color);
+    /* Subtle background */
+     color: var(--primary-color);
+    /* Color for the text */
+     border-radius: 10px;
+    /* Soft rounded corners */
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Soft shadow for depth */
+     margin: 20px auto;
+    /* Adjusted margin for emphasis */
+     display: inline-block;
+    /* To wrap content */
+     background-color: var(--text-color);
+}
+/* Adding quotation marks */
+ .testimonial-text::before, .testimonial-text::after {
+     content: open-quote;
+    /* For the opening quote */
+     font-size: 2em;
+    /* Larger quotation marks */
+     vertical-align: -0.4em;
+    /* Adjust alignment */
+     color: var(--accent-color);
+    /* Gold color for quotes */
+     padding: 0 .2em;
+}
+ .testimonial-text::after {
+     content: close-quote;
+    /* For the closing quote */
+}
+ .testimonial-author {
+     font-family:'Amatic SC',cursive;
+     font-weight:700;
+     font-size:1.2em;
+     font-family:'Amatic SC',cursive;
+     font-weight:700;
+     font-size:1.2em;
+     margin-top:20px 
+}
+ .testimonial-prev,.testimonial-next {
+     cursor:pointer;
+     position: absolute;
+     width:auto;
+     margin-top:-22px;
+     padding:16px;
+     color:var(--primary-color);
+     font-weight:700;
+     font-size:18px;
+     transition:.6s ease;
+     border-radius:0 3px 3px 0;
+     user-select:none 
+     
+}
+ .testimonial-prev {
+     left:0;
+     border-radius:3px 0 0 3px 
+}
+ .testimonial-next {
+     right:0;
+     border-radius:3px 0 0 3px 
+}
+ .testimonial-photo img {
+     width:100px;
+     height:100px;
+     border-radius:50%;
+     object-fit:cover;
+     border:3px solid var(--primary-color);
+     margin:0 auto 
+}
+ .testimonial-rating {
+    color: var(--text-color);
+    font-size: 24px;
+    margin: 10px 0;
+    text-shadow: 0 0 3px #fff;
+    border-radius: 5px;
+}
+ .features-services-section {
+    background-color:var(--background-color);
+}
+ .features-services-section .tabs {
+     overflow:hidden;
+     background-color:var(--background-color);
+     padding:20px 0;
+     display:flex;
+     justify-content:center;
+     border-bottom:2px solid var(--primary-color) 
+}
+ .features-services-section .tab-link {
+     background-color:inherit;
+     float:left;
+     border:none;
+     outline:none;
+     cursor:pointer;
+     padding:14px 16px;
+     transition:background-color .3s;
+     font-family:'Montserrat',sans-serif;
+     color:var(--text-color);
+     font-size:1em 
+}
+ .features-services-section .tab-link.active {
+     background-color:var(--primary-color);
+     color:var(--background-color) 
+}
+ .features-services-section .tab-content {
+     display:none;
+     padding:20px;
+     text-align:center 
+}
+ .features-services-section .tab-content img {
+     width:100px;
+     margin:20px 0;
+     border-radius:10px 
+}
+ .faq-section {
+     margin:40px auto;
+     max-width:800px 
+}
+ .faq-item {
+     margin-bottom:20px 
+}
+ .faq-question {
+     width:100%;
+     background-color:var(--primary-color);
+     color:var(--text-color);
+     padding:15px;
+     font-family:'Montserrat',sans-serif;
+     text-align:left;
+     border:none;
+     outline:none;
+     cursor:pointer;
+     transition:background-color .3s ease 
+}
+ .faq-answer {
+     display:none;
+     padding:20px;
+     background-color:var(--secondary-color);
+     color:var(--text-color) 
+}
+ .faq-answer p {
+     margin:0 
+}
+ .site-footer {
+     background-color:var(--secondary-color);
+     color:var(--text-color);
+     padding:20px 0;
+     text-align:center 
+}
+ .footer-content {
+     display:flex;
+     justify-content:space-around;
+     align-items:center;
+     flex-wrap:wrap 
+}
+ .social-links a {
+     margin:0 10px;
+     display:inline-block 
+}
+ .social-links img {
+     width:40px;
+     height:40px;
+     transition:transform .3s ease 
+}
+ .social-links img:hover {
+     transform:scale(1.1) 
+}
+ .footer-info p {
+     margin:5px 0;
+     font-family:'Montserrat',sans-serif 
+}
+ .footer-bottom {
+     margin-top:20px;
+     font-family:'Amatic SC',cursive;
+     font-size:1.2rem 
+}
+ .testimonial-item.active,.features-services-section .tab-content.active {
+     display:block 
+}
+ .testimonial-prev:hover,.testimonial-next:hover,.features-services-section .tab-link:hover,.faq-question:hover {
+     background-color:var(--secondary-color) 
+}
+ @media (max-width: 768px) {
+     .footer-content {
+         display:block 
+    }
+}
