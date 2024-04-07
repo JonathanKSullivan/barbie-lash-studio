@@ -142,8 +142,10 @@
      color:var(--text-color) 
 }
  .benefit-card-front {
-     background-color:var(--primary-color);
-     font-size:2em 
+    background-color: var(--primary-color);
+    font-size: 2em;
+    border: #000 3px;
+    border-style: solid;
 }
  .benefit-card-back {
      background-color:var(--secondary-color);
