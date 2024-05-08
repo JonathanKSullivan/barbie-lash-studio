@@ -9,12 +9,12 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif; /* Consistent font family */
-    height: 100%;\
+    font-family: 'Montserrat', sans-serif; /* Consistent font family across the site */
+    height: 100%;
     background-image: url('background-pattern.png'); /* Consistent background */
     background-repeat: repeat;
     background-attachment: fixed;
-    color:var(--text-color);
+    color: var(--text-color); /* Consistent text color */
 }
 
 header {
@@ -27,25 +27,24 @@ header {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 20px; /* Padding ensures content does not touch the edges */
 }
 
 header h1 {
     font-family: 'Pacifico', cursive;
     font-size: 4.5em;
-    color: #fff;
+    color: #fff; /* White color for main heading to stand out on gradient */
 }
 
 header h2, header h3 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 700; /* Bold font weight for clear readability */
 }
 
 header h2 {
-    margin: .5em 0;
+    margin: 0.5em 0; /* Margin to separate from other elements */
 }
 
 header h3 {
-    margin: 20px 0;
+    margin: 20px 0; /* More space around sub-headings */
 }
-
